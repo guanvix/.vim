@@ -12,6 +12,7 @@ set wildmenu											"启用增强TAB自动补全
 set wildmode=list:longest,full							"补全为允许的最大字符串,然后打开wildmenu
 set incsearch											
 set clipboard=unamed,unamedplus							"复制到系统寄存器*和+
+set t_Co=256
 set termguicolors
 
 
@@ -59,6 +60,7 @@ Plug 'https://github.com/vim-airline/vim-airline-themes'
 Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lkockfile'}
 Plug 'ryanoasis/vim-devicons'
 Plug 'easymotion/vim-easymotion'
+Plug 'skywind3000/vim-rt-format', { 'do': 'pip3 install autopep8' }
 """"""""
 
 " Initialize plugin system
@@ -244,3 +246,10 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#formatter = 'default'
 let g:airline_powerline_fonts = 1
 
+"vim-rt-format
+" By default, it will be triggered by `ENTER` in insert mode.
+" set this to 1 to use `CTRL+ENTER` instead, and keep the
+" default `ENTER` behavior unchanged.
+let g:rtf_ctrl_enter = 0
+" Enable formatting when leaving insert mode
+let g:rtf_on_insert_leave = 1
